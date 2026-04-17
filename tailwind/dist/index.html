@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adventurers</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-gray-700 text-white">
+ <!-- navbar starts here -->
+  <nav class="w-full h-12 bg-violet-600 flex items-center justify-between px-4 mt-1 rounded">
+    <div class="text-2xl">adventurer</div>
+    <ul class=" flex gap-4 cursor-pointer">
+        <li>content</li>
+        <li>products</li>
+        <li>about</li>
+    </ul>
+    <div class="bg-blue-800 text-white px-4 py-2 rounded cursor-pointer">login/signup</div>
+  </nav>
+  <!-- navbar ends here -->
+   <!-- main body starts here  -->
+    <header> 
+        <!-- sliding photos  -->
+        <div class="w-full relative h-screen overflow-hidden">
+            <div id="slider" class="flex transition-transform duration-700">
+                <div class="min-w-full bg-cover h-screen bg-center" style="background-image: url(https://images.pexels.com/photos/32278104/pexels-photo-32278104.jpeg);"></div>
+                <div class="min-w-full bg-cover h-screen bg-center" style="background-image: url(https://images.pexels.com/photos/14030559/pexels-photo-14030559.jpeg);"></div>
+                <div class="min-w-full bg-cover h-screen bg-center" style="background-image: url(https://images.pexels.com/photos/5091715/pexels-photo-5091715.jpeg);"
+                ></div>
+            </div>
+            <!-- text context -->
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+                <h1 class="text-5xl font-bold mb-4">Explore the World with Us</h1>
+                <p class="text-xl mb-8">Discover new destinations, cultures, and experiences with our travel services.</p>
+                <button class="bg-blue-800 hover:bg-blue-700 text-white px-6 py-3 rounded">Book Now</button>  
+            </div>
+<!-- navigation buttons -->
+            <div class="absolute start-40 bottom-4 left-1/2 transform -translate-x-1/2 flex gap-4">
+                <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 px-3 py-1 rounded" onclick="index = (index - 1 + totalSlides) % totalSlides; slider.style.transform = `translateX(-${index * 100}%)`;">&lt;</button>
+                <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 px-3 py-1 rounded" onclick="index = (index + 1) % totalSlides; slider.style.transform = `translateX(-${index * 100}%)`;">&gt;</button>
+            </div>
+            <!-- dots for navigation -->
+            <div class="absolute bottom-4 right-4 flex gap-2">
+                <button class="w-3 h-3 bg-gray-300 rounded-full" onclick="index = 0; slider.style.transform = `translateX(-${index * 100}%)`;"></button>
+                <button class="w-3 h-3 bg-gray-300 rounded-full" onclick="index = 1; slider.style.transform = `translateX(-${index * 100}%)`;"></button>
+                <button class="w-3 h-3 bg-gray-300 rounded-full" onclick="index = 2; slider.style.transform = `translateX(-${index * 100}%)`;"></button>
+        </div>
+        <script>
+  let index = 0;
+  const slider = document.getElementById("slider");
+  const totalSlides = slider.children.length;
+
+  setInterval(() => {
+    index = (index + 1) % totalSlides;
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  }, 3000); // changes every 3 sec
+</script>
+    </header>
+    <main>
+        <!-- 1st paragraph -->
+        <div class="bg-violet-700 mt-4 p-2">
+            <p>Welcome to our travel website! We offer the best travel experiences around the world. taveling can heal you from the stresses of daily life.</p>
+        </div>
+            <!-- 2nd paragraph -->
+        <div class="bg-violet-700 mt-4 p-2">
+            <p>Our team of travel experts is dedicated to helping you plan the perfect trip. Whether you're looking for a relaxing beach vacation, an adventurous trek through the mountains, or a cultural tour of a new city, we have something for everyone.</p>
+        </div>
+        <!-- search  -->
+        <div class="mt-10 flex w-full gap-10">
+            <!-- text  -->
+             <div>
+                 <h1 class="text-8xl font-bold mb-4 "> explore new places</h1>
+              <p class="text-3xl mb-8">Find your next adventure with our curated travel experiences.</p>
+              <select class="text-black rounded-xl" name="places" id="places">
+                <option value="places">Select a place</option>
+                <option value="japan">Japan</option>
+                <option value="india">India</option>
+                <option value="spain">Spain</option>
+                <option value="italy">Italy</option>
+              </select>
+              <input class="rounded-xl border border-gray-300 py-2 px-4 text-black focus:outline-none focus:ring-2 focus:ring-blue-500" type="text" placeholder="search for a destination">
+             </div>
+             <!-- images -->
+                <div class="flex gap-10 w-full mt-6 justify-center text-center ">
+                    <!-- <div> -->
+                         <!-- <p class="absolute inset-0 font-semibold bottom-1 top-7 gap-10"></p> -->
+                    <!-- </div> -->
+                   
+                    <img class="w-1/4 h-56 object-cover rounded hover:cursor-zoom-in " src="https://images.pexels.com/photos/32278104/pexels-photo-32278104.jpeg" alt="">
+                    <!-- <div> -->
+                        <!-- <p class="absolute inset-0 font-semibold bottom-1 top-7 gap-10"></p> -->
+                    <!-- </div> -->
+                     
+                    <img class="w-1/4 h-56 object-cover rounded hover:cursor-zoom-in" src="https://images.pexels.com/photos/14030559/pexels-photo-14030559.jpeg" alt="">
+                    <!-- <div> -->
+                        <!-- <p class="absolute inset-0 font-semibold bottom-1 top-7 gap-10"></p> -->
+                    <!-- </div> -->
+                        
+                    <img class="w-1/4 h-56 object-cover rounded hover:cursor-zoom-in" src="https://images.pexels.com/photos/5091715/pexels-photo-5091715.jpeg" alt="">
+                </div>
+        </div>
+        <!-- bix text -->
+        <div>
+            <h2 class="text-6xl font-semibold text-center mt-10">choose your next destination</h2>
+
+        </div>
+        <!-- centere pictures -->
+        <ul class="flex gap-10 w-full mt-6 text-center justify-center text-xl cursor-pointer">
+            <li>top destinations</li>
+            <li>exclusive offers</li>
+            <li>journey to book</li>
+        </ul>
+        <!-- cards -->
+         <div class=" flex gap-10 w-full mt-6 justify-center text-black p-6 ">
+            <div class="border bg-white text-black">
+                <img class="w-full h-56" src=" https://images.pexels.com/photos/35550986/pexels-photo-35550986.jpeg" alt="">
+               <h1 class="font-semibold">SPAIN: best landscape and culture</h1>
+               <p class="mt-3">3days&2nights</p>
+               <button class="bg-blue-800 hover:bg-blue-500 text-white px-4 py-2 rounded mt-6 place-items-start">Book Now</button>
+            </div>
+            <div class="border bg-white text-black">
+                <img class="w-full h-56" src="https://images.pexels.com/photos/13545201/pexels-photo-13545201.jpeg" alt="">
+                <h1 class="font-semibold">INDIA: rich heritage and diverse cuisine</h1>
+                <p class="mt-3">5days&4nights</p>
+                <button class="bg-blue-800 hover:bg-blue-500 text-white px-4 py-2 rounded mt-6">Book Now</button>
+            </div>
+            <div class="border bg-white text-black">
+                <img class="w-full h-56" src="https://images.pexels.com/photos/34924714/pexels-photo-34924714.jpeg" alt="">
+                <h1 class="font-semibold">JAPAN: unique culture and stunning scenery</h1>
+                <p class="mt-3">7days&6nights</p>
+                <button class="bg-blue-800 hover:bg-blue-500 text-white px-4 py-2 rounded mt-6 ">Book Now</button>
+            </div>
+           
+         </div>
+         <div class="flex justify-center">
+              <button class="bg-violet-600 hover:bg-violet-400 rounded px-4 py-2 mt-5 ">view more</button>
+         </div>
+         <!-- stay -->
+          <div class="mt-15">
+            <h1 class="text-2xl text-center mt-14">stay with adventurers</h1>
+            <p class="text-4xl text-center font-semibold mt-3">Iconic safari lodges and luxury riverboats, private-island hideaways and next-level villas  every property in our collection is extraordinary. <br class="text-center"> travel with comfort </p>
+
+          </div>
+          <!-- stay images -->
+         <div class="flex gap-10 relative">
+
+           <div class="relative">
+            <button class="bg-transparent text-black font-bold border absolute bottom-4 right-4">learn more</button>
+            <img class="w-full h-96 object-cover mt-6 rounded" src="https://images.pexels.com/photos/860271/pexels-photo-860271.jpeg" alt="">
+           </div> 
+           <div class="relative">
+             <button class="bg-transparent text-black font-bold border absolute bottom-4 right-4">learn more</button>
+             <img class="w-full h-96 object-cover mt-6 rounded" src="https://images.pexels.com/photos/34732344/pexels-photo-34732344.jpeg" alt="">
+           </div>
+           <div class="relative ">
+             <button class="bg-transparent text-black font-bold border absolute bottom-4 right-4">learn more</button>
+            <img class="w-full h-96 object-cover mt-6 rounded" src="https://images.pexels.com/photos/22034268/pexels-photo-22034268.jpeg" alt="">
+           </div>
+            
+            
+
+          </div>
+           
+          
+         
+          
+    </main>
+    <footer class="bg-black text-white">
+            <div>
+            <h1 class="text-2xl text-center mt-14">join our newsletter</h1>
+            <p class="text-4xl text-center font-semibold mt-3">Get the latest travel news, tips, and exclusive offers delivered straight to your inbox.</p>
+            <div class="flex justify-center mt-6">
+                <input class="rounded-l-xl border border-gray-300 py-2 px-4 text-black focus:outline-none focus:ring-2 focus:ring-blue-500" type="email" placeholder="Enter your email">
+                <button class="bg-blue-800 hover:bg-blue-500 text-white px-4 py-2 rounded-r-xl">Subscribe</button>
+            </div>
+          </div>
+          <div>
+            <h1 class="text-2xl text-center mt-14">follow us on social media</h1>
+            <p class="text-4xl text-center font-semibold mt-3">Stay connected with us for the latest travel inspiration, tips, and exclusive offers.</p>
+            <div class="flex justify-center gap-6 mt-6">
+                <button class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded">Facebook</button>
+                <button class="bg-pink-600 hover:bg-pink-500 text-white px-4 py-2 rounded">Instagram</button>
+                <button class="bg-blue-400 hover:bg-blue-300 text-white px-4 py-2 rounded">Twitter</button>
+                <button class="bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded">YouTube</button>
+            </div>
+        </div>
+           </footer>
+           <!-- code ends here -->
+</body>
+</html> 
